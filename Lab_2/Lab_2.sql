@@ -2,31 +2,6 @@
 --  Employee (EmpNo, EmpName, Gender, Salary, Address, DNo)
 --  Department (DeptNo, DeptName, Location)
 
---  Create Employee table with following constraints:
---   Make EmpNo as Primary key.
---   Do not allow EmpName, Gender, Salary and Address to have null values.
---   Allow Gender to have one of the two values: ‘M’, ‘F’.
-
-CREATE TABLE Employee(
-EmpNo INT PRIMARY KEY,
-EmpName VARCHAR(50) NOT NULL,
-Gender VARCHAR(1) NOT NULL,
-Salary NUMBER NOT NULL,
-Address VARCHAR(50) NOT NULL,
-Dno INT,
-CHECK(Gender in ('M', 'F'))
-)
-
-
---  Create Department table with following:
---   Make DeptNo as Primary key
---   Make DeptName as candidate key
-CREATE TABLE Department(
-DeptNo INT PRIMARY KEY, 
-DeptName VARCHAR(50) UNIQUE, 
-Location VARCHAR(50)
-)
-
 --  Make DNo of Employee as foreign key which refers to DeptNo of Department.
 ALTER TABLE Employee ADD CONSTRAINT FK_Dno FOREIGN KEY(Dno) REFERENCES Department(DeptNo);
 

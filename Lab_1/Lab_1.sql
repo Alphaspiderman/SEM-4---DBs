@@ -1,10 +1,3 @@
--- Create Table
-CREATE TABLE employee(
-emp_no INT,
-emp_name VARCHAR(50),
-emp_address VARCHAR(50)
-);
-
 -- Insert 5 Employees
 INSERT INTO employee values(5, 'Ram', 'MANIPAL');
 
